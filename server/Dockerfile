@@ -4,10 +4,10 @@ WORKDIR /usr/src/todo
 
 COPY package.json .
 
-RUN apk add --update && apk add nodejs && npm install
+RUN apk add --update nodejs npm && npm install
 
 COPY . .
 
 EXPOSE 8000
 
-CMD ['npm', "start"]
+CMD ["node", "server.js"]
